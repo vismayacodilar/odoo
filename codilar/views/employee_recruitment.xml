@@ -37,7 +37,7 @@
 
         <menuitem
             id="menu_employee_recruitment_child"
-            name="sales"
+            name="recruitment"
             parent="menu_employee_department_child"
             sequence="1"
             action ="action_employee_recruitment_list"

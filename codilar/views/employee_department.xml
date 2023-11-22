@@ -13,11 +13,20 @@
                 </tree>
             </field>
         </record>
+        <record id="action_wizard_mail_form_view" model="ir.actions.act_window">
+            <field name="name">wizard mail</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mail.compose.message</field>
+            <field name="view_mode">form</field>
+        </record>
         <record id="employee_department_form_view" model="ir.ui.view">
             <field name="name">employee.department.view.form</field>
             <field name="model">employee.department</field>
             <field name="arch" type="xml">
                 <form string="Employee Department">
+                    <header>
+                        <button name="%(codilar.action_wizard_mail_form_view)d" string="mail" type="action" class="oe_highlight"/>
+                    </header>
                     <sheet>
                         <group>
                             <group>
@@ -42,13 +51,14 @@
         <menuitem
             id="menu_employee_department_list_root"
             name="Employee_department"
-            sequence="1"/>
+            parent="menu_employee_details_list_root"
+            action ="action_employee_department_list"
+            sequence="2"/>
         <menuitem
             id="menu_employee_department_child"
             name="department"
             parent="menu_employee_details_list_root"
             sequence="0"
-            action ="action_employee_department_list"
         />
     </data>
 </odoo>

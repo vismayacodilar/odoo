@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_sale_order_template">
+            <t t-call="web.basic_layout">
+                <table class="table table-sm o_main_table">
+                    <thead>
+                        <th name="name">name</th>
+                        <th name="name">email</th>
+                        <th name="name">age</th>
+                        <th name="name">gender</th>
+                        <th name="name">company</th>
+                    </thead>
+                    <tbody>
+                        <td>
+                            <t t-foreach="docs" t-as="doc">
+                                <t t-esc="doc.name"/>
+                            </t>
+                        </td>
+                        <td>
+                            <t t-foreach="docs" t-as="doc">
+                                <t t-esc="doc.email"/>
+                            </t>
+                        </td>
+                        <td>
+                            <t t-foreach="docs" t-as="doc">
+                                <t t-esc="doc.age"/>
+                            </t>
+                        </td>
+                        <td>
+                            <t t-foreach="docs" t-as="doc">
+                                <t t-esc="doc.gender"/>
+                            </t>
+                        </td>
+                        <td>
+                            <t t-foreach="docs" t-as="doc">
+                               <t t-esc="doc.company.name"/>
+                            </t>
+                        </td>
+
+                    </tbody>
+                </table>
+
+            </t>
+
+        </template>
+    </data>
+</odoo>
